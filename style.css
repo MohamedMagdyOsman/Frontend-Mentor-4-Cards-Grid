@@ -23,6 +23,7 @@
   padding: 0;
   font-weight: 500;
   box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
 html {
@@ -75,8 +76,9 @@ main > p {
 
 .services_grid {
   max-width: 100%;
-  display: grid;
   gap: 3rem 3rem;
+  display: -ms-grid;
+  display: grid;
   grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
 }
 
@@ -84,6 +86,7 @@ main > p {
   border-radius: 1rem;
   background-color: #fff;
   box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 10px 10px rgba(0,0,0,0.1);
 
   padding: 2rem;
   overflow: hidden;
@@ -128,7 +131,12 @@ main > p {
 }
 
 .service .service_image {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
   justify-content: end;
 }
 
@@ -148,8 +156,12 @@ main > p {
   .services_grid {
     width: 80%;
     margin: auto;
+
+    -ms-grid-columns: calc(95% / 3) calc(95% / 3) calc(95% / 3);
     grid-template-columns: calc(95% / 3) calc(95% / 3) calc(95% / 3);
-    grid-template-rows: 100px 100px 100px 100px;
+
+    -ms-grid-rows: auto auto auto auto;
+    grid-template-rows: repeat(4, auto);
   }
 
   .service:nth-child(1) {
